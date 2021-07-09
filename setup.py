@@ -14,7 +14,7 @@ setup(
     author_email='natchpor@scg.com',
     license='Apache-2.0',
     packages=['mycroft_tts_plugin_botnoi'],
-    install_requires=requirements,
+    # install_requires=requirements,
     zip_safe=True,
     classifiers=[
         'Development Status :: 3 - Alpha',
