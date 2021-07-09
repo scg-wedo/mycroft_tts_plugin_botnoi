@@ -4,7 +4,8 @@ from mycroft.tts import TTS, TTSValidator
 class botnoiTTSPlugin(TTS):
     """Interface to Botnoi TTS."""
     def __init__(self, lang, config):
-        super(botnoiTTSPlugin, self).__init__(lang, config, BotnoiTTSValidator(self))
+        super().__init__(lang, config, BotnoiTTSValidator(self), audio_ext='wav',
+                         phonetic_spelling=False, ssml_tags=None)
 
     def get_tts(self, sentence, wav_file):
         url = "https://openapi.botnoi.ai/service-api/text2speech-female?text=สวัสดี&speaker=tonkhaow"
