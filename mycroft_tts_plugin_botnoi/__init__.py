@@ -15,9 +15,9 @@ class botnoiTTSPlugin(TTS):
             'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MjYzMDgxMjYsImlkIjoiZjgxZDFlYmEtNTQ4Zi00ZjdiLWI1N2YtZDYxZjFhNGFlNmI3IiwiaXNzIjoiRVd0MGxYWHNzUVMzUklsMkVUVWczQnRYVEdHVkdFSlciLCJuYW1lIjoiS2VuIiwicGljIjoiaHR0cHM6Ly9wcm9maWxlLmxpbmUtc2Nkbi5uZXQvMGhMd0dtOElpUUUxaDZGRHdadUdCc0QwWlJIVFVOT2hVUUFub0lPRmhIU1d4ZWNWWUdUM05VYXcxSEhUOVFkd0VQUlNkWk9Bb1hTejFRIn0.jFbxULw3Mm9zY47n-QGVVQSsYUhy_T1Xqh_zoBrnHCY'
         }
         response = requests.request("GET", url, headers = headers)
-        with open(str(wav_file), 'wb') as file:
+        with open(str('tts.wav'), 'wb') as file:
             file.write(response.content)
-        return (wav_file, None)  # No phonemes
+        return ('tts.wav', None)  # No phonemes
 
 class BotnoiTTSValidator(TTSValidator):
     def __init__(self, tts):
