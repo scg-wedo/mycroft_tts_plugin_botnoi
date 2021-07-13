@@ -8,7 +8,7 @@ with open(join(dirname(abspath(__file__)), 'requirements.txt')) as f:
 
 PLUGIN_ENTRY_POINT = 'botnoi_tts_plug = mycroft_tts_plugin_botnoi:botnoiTTSPlugin'
 setup(
-    name='mycroft_tts_plugin_botnoi',
+    name='mycroft-tts-plugin-botnoi',
     version='0.1',
     description='Botnoi tts plugin for mycroft',
     url='https://github.com/SCGWEDOtech/mycroft_tts_plugin_botnoi.git',
