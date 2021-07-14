@@ -10,7 +10,7 @@ class botnoiTTSPlugin(TTS):
         super(botnoiTTSPlugin, self).__init__(lang, config, BotnoiTTSValidator(self))
 
     def get_tts(self, sentence, wav_file):
-        url = "https://openapi.botnoi.ai/service-api/text2speech-female?text=สวัสดี&speaker=tonkhaow"
+        url = "https://openapi.botnoi.ai/service-api/text2speech-female?text="+str(sentence)+"&speaker=tonkhaow"
         headers = {
             'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MjYzMDgxMjYsImlkIjoiZjgxZDFlYmEtNTQ4Zi00ZjdiLWI1N2YtZDYxZjFhNGFlNmI3IiwiaXNzIjoiRVd0MGxYWHNzUVMzUklsMkVUVWczQnRYVEdHVkdFSlciLCJuYW1lIjoiS2VuIiwicGljIjoiaHR0cHM6Ly9wcm9maWxlLmxpbmUtc2Nkbi5uZXQvMGhMd0dtOElpUUUxaDZGRHdadUdCc0QwWlJIVFVOT2hVUUFub0lPRmhIU1d4ZWNWWUdUM05VYXcxSEhUOVFkd0VQUlNkWk9Bb1hTejFRIn0.jFbxULw3Mm9zY47n-QGVVQSsYUhy_T1Xqh_zoBrnHCY'
         }
