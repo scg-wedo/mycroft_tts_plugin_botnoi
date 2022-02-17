@@ -11,8 +11,12 @@ class botnoiTTSPlugin(TTS):
         super(botnoiTTSPlugin, self).__init__(lang, config, BotnoiTTSValidator(self))
 
     def get_tts(self, sentence, wav_file):
-        url = "https://tts.botnoi.ai/demo/api/doctts?text="+str(sentence)+"&speaker=tonkhaow&api_key=1qL0ISiB1cjXjQ0HD-1sjjTHesZrkx9A_ym-ifUxCTWI"
-        response = requests.request("GET", url)
+        token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NDUzNTg5NjQsImlkIjoiZjgxZDFlYmEtNTQ4Zi00ZjdiLWI1N2YtZDYxZjFhNGFlNmI3IiwiaXNzIjoiRVd0MGxYWHNzUVMzUklsMkVUVWczQnRYVEdHVkdFSlciLCJuYW1lIjoiS2VuIiwicGljIjoiaHR0cHM6Ly9wcm9maWxlLmxpbmUtc2Nkbi5uZXQvMGhMd0dtOElpUUUxaDZGRHdadUdCc0QwWlJIVFVOT2hVUUFub0lPRmhIU1d4ZWNWWUdUM05VYXcxSEhUOVFkd0VQUlNkWk9Bb1hTejFRIn0.P8BVEzgxdDgob5xXd6wEKdlKGqBR6G6cO7qKYrfbUaM'
+        url = "https://openapi.botnoi.ai/service-api/text2speech-female?text="+str(sentence)+"&speaker=tonkhaow&format=wav"
+        # url = "https://tts.botnoi.ai/demo/api/doctts?text="+str(sentence)+"&speaker=tonkhaow&api_key=1qL0ISiB1cjXjQ0HD-1sjjTHesZrkx9A_ym-ifUxCTWI"
+        headers = {'Authorization': 'Bearer '+str(token)}
+        # response = requests.request("GET", url)
+        response = requests.request("GET", url, headers = headers)
         with open(wav_file, 'wb') as file:
             file.write(response.content)
         return (wav_file, None)  # No phonemes
